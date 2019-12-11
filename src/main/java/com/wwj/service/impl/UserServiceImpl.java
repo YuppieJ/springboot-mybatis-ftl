@@ -15,6 +15,11 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
+    public User findUserById(Integer id) {
+        return userMapper.findUserById(id);
+    }
+
+    @Override
     public User userLogin(String username, String password) {
         return userMapper.userLogin(username, password);
     }
@@ -22,5 +27,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> queryUserList() {
         return userMapper.queryUserList();
+    }
+
+    @Override
+    public Integer updateMyInfo(User user) {
+        return userMapper.updateMyInfo(user);
     }
 }

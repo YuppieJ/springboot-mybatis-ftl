@@ -9,7 +9,11 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
+    User findUserById(Integer id);
+
     User userLogin(@Param("username") String username, @Param("password") String password);
 
     List<User> queryUserList();
+
+    Integer updateMyInfo(User user);
 }
