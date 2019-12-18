@@ -53,4 +53,10 @@ public class UserController {
             return "user/userInfo";
         }
     }
+
+    @RequestMapping(value = "findUserById/{id}")
+    @ResponseBody
+    public User findUserById(@PathVariable Integer id){
+        return userService.findUserById(id);
+    }
 }
